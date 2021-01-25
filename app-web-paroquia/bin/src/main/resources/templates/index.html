@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+	<head>
+		<title>Paróquia Santa Ângela de Mérici</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  		        	
+		<!--<link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">-->
+        <link rel="stylesheet" href="css/index.css">
+	</head>
+	
+	<body>
+		 <!-- Início da barra de navegação -->
+		 <nav class="navbar navbar-expand-sm bg-info  navbar-dark fixed-top ">
+			 <div class="container-fluid">
+				<a href="index.html" class="navbar-brand logotipo">
+					<img src="img/logo paroquia.png" alt="Logotipo Paróquia">
+				</a>
+				<!--Recolher barra de navegação em telas pequenas-->
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="collapsibleNavbar">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+						  <a class="nav-link page-scroll" href="#"><span class="txt-container">Início</span></a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link page-scroll" href="#sobre">Sobre nós</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link page-scroll" href="#horarios">Horários de Missa</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link page-scroll" href="#oracao">Pedido de oração</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link page-scroll" href="#links">Links úteis</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link page-scroll" href="#contato">Contato</a>
+						</li>
+					  </ul>
+				  </div>
+			</div>
+		 </nav>
+	
+		<!-- Fim da barra de navegação -->
+		<div id="fundo-externo">
+			<div id="fundo">
+				<img src="img/AngelaMerici-27Enero.jpg" alt="Santa Angela de Merici" class="img-fluid img-fundo">
+			</div>
+		</div>
+		
+		<br/>
+		
+		<div class="container-form bg-secondary text-white" >
+			<a name="sobre">
+				<h2 style="text-align:center">Sobre nós</h2>
+				<img src="img/7.jpg" alt="Santa Angela de Merici" class="img-fluid rounded-circle img-sobre mx-auto d-block">
+				<p class="sobre">Informações sobre a paróquia</p>
+			</a>
+		</div>
+		
+		<br/>
+		
+		<div class="container-form bg-info text-white" >
+			<a name="horarios">
+				<h2 style="text-align:center">Horários de Missa</h2>
+			</a>
+				<p>Domingo: 8h, 10h, 11h15, 12h30, 17h, 18h30 e 20h</p>
+				<p>Segunda a Sexta: 8h, 12h e 17h30</p>
+				<p>Sábado: 8h, 12h e 16h todas presenciais</p>
+		</div>
+		
+		<br/>
+			
+		<div class="container-form bg-secondary text-white" >
+			<a name="oracao">
+				<h2 style="text-align:center">Pedido de oração</h2>
+			</a>			
+					<form action="processa" method="post">		
+						
+							<label for="cnome">
+								Nome:
+							</label>
+							<input type="text" name="nome" id="cnome" required/>
+							
+							<label for="cemail">
+									Email:
+							</label>
+							<input type="email" name="email" id="cemail"  required/>							
+							
+							<label for="ctelefone">
+								Telefone:
+							</label>
+							<input type="tel" name="telefone" id="ctelefone" />
+							
+							<label for="ctexto">
+								Pedido de oração:
+							</label>
+							<input type="text" name="texto" id="ctexto" />
+						
+							<input type="submit" name="botao" value="Enviar" class="botao" />			
+							
+					</form>			
+		</div>
+		
+		<br/>	
+		
+		<div class="container-form bg-info text-white ">
+			<a name="links">
+				<h2 style="text-align:center">Links úteis</h2>
+			</a>
+		
+			<a href="https://liturgia.cancaonova.com/pb/" target="_blank" >
+				<img src="img/Liturgia_diaria1.jpg" alt="liturgia" class="img-fluid img-links-d img-thumbnail mx-auto d-block" >
+			</a>
+		
+			<a href="http://www.catolicoorante.com.br/oracoes.html" target="_blank" >
+				<img src="img/oracao dia.jpg" alt="orações" class="img-fluid img-links-e img-thumbnail mx-auto d-block" >
+			</a>		
+	
+			<a href="https://santo.cancaonova.com/" target="_blank" >
+				<img src="img/santo-do-dia.png" alt="santo do dia" class="img-fluid img-links-d img-thumbnail mx-auto d-block" >
+			</a>
+			
+			<a href="http://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html" target="_blank" >
+				<img src="img/catecismo_da_igreja_caolica_10.jpg" alt="catecismo" class="img-fluid img-links-e img-thumbnail mx-auto d-block" >
+			</a>			
+			
+		</div>
+		
+		
+		
+		
+		<br/>
+		<footer class="bg-secondary text-white">
+			<a name="contato">
+				<h2 style="text-align:center" >Contato</h2>
+			 </a>
+			 <div style="text-align:center">
+				 <p>Rua Manoel Rodrigues Jacob, S/N, Santa Angelina</p>
+				 <p>Araraquara/SP - CEP 14802-195</p>
+				 <p>(16) 98121-5731</p>
+				 <p>paroq.santangela@gmail.com</p>
+			 </div>
+		</footer>
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script>
+		$(window).scroll(function() {
+			if ($(document).scrollTop() > 50) {
+					$('.navbar').addClass('sticky');
+					$('.logotipo img').addClass('sticky img');
+			} else {
+				$('.navbar').removeClass('sticky');
+				$('.logotipo img').removeClass('sticky img');
+			}
+		});
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

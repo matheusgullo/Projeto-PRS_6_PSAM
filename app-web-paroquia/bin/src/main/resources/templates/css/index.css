@@ -1,0 +1,107 @@
+.container-form{
+	width:50%;
+	margin: auto;
+	padding: 20px 20px;
+	overflow: auto;
+	font-size:100%;
+	font-family: verdana, sans-serif;
+	position:relative;
+}
+
+label{
+	width:100%;
+	float:left;
+}
+
+
+input[type=text],
+input[type=tel],
+input[type=email],
+input[type=submit] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #000;
+ 
+}
+
+input[type=submit]{
+	background-color:#87CEFA;
+	color: #fff;
+	border-radius: 10px;
+	border:#0f0;
+	font-size: 100%;
+	font-family: verdana, sans-serif;	
+	width: 100%;
+	padding:10px 10px;
+	
+}
+
+* {
+  box-sizing: border-box;	
+  margin:0;
+  padding:0;
+}
+
+.nav-item{
+	margin:5px;
+	padding:10px;
+	font-size: 15px;
+}
+
+
+.img-links-d{
+	width: 40%;
+	margin: 20px;
+	float:right;
+	clear: right;
+		
+}
+
+.img-links-e{
+	width: 40%;
+	margin: 20px;
+	float:left;
+	clear: left;
+		
+}
+
+.img-sobre{
+	width: 40%;
+}
+
+
+
+.logotipo img{
+	width: 35%;
+	
+}
+
+.img-fundo{	
+  width: 100%;  
+  padding: 0;
+	
+}
+
+.navbar {
+	height: 100px;
+	min-width: 100%;
+	display: table;
+	table-layout: fixed;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+.sticky{
+	visibility: visible;
+	height: 70px !important;
+}
+
+.sticky img{
+	visibility: visible;
+	width: 25% !important;
+}
+
+body{
+	background-color:#ADD8E6 !important;
+}
