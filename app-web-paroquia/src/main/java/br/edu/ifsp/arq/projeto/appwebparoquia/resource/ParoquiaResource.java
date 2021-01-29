@@ -45,7 +45,7 @@ public class ParoquiaResource {
 	}
 		
 	@GetMapping
-	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_PAROQUIA') and #oauth2.hasScope('read')")
+	//@PreAuthorize("hasAuthority('ROLE_PESQUISAR_PAROQUIA') and #oauth2.hasScope('read')")
 	public List<Paroquia> listar(){		
 		return paroquiaRepository.findAll();		
 	}
@@ -56,17 +56,7 @@ public class ParoquiaResource {
 	public Paroquia salvar(@Valid @RequestBody Paroquia paroquia ) {
 		return paroquiaRepository.save(paroquia);
 	}
-	
-	@GetMapping("/{codigo}")
-	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_PAROQUIA') and #oauth2.hasScope('read')")
-	public ResponseEntity<Paroquia> buscarPeloCpf(@PathVariable Long codigo){
-		Optional<Paroquia> paroquia = paroquiaRepository.findById(codigo);
-		if(paroquia.isPresent()) {
-			return ResponseEntity.ok(paroquia.get());
-		}
-		return ResponseEntity.notFound().build();
-	}
-		
+			
 	@DeleteMapping("/{codigo}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void remover(@PathVariable Long codigo) {

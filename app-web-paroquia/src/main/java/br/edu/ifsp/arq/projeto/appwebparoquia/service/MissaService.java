@@ -3,10 +3,12 @@ package br.edu.ifsp.arq.projeto.appwebparoquia.service;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.stereotype.Service;
 
 import br.edu.ifsp.arq.projeto.appwebparoquia.model.Missa;
 import br.edu.ifsp.arq.projeto.appwebparoquia.repository.MissaRepository;
 
+@Service
 public class MissaService {
 	@Autowired
 	private MissaRepository missaRepository;

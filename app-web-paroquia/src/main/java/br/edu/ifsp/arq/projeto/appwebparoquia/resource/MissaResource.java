@@ -33,6 +33,13 @@ public class MissaResource {
 	@Autowired
 	private MissaService missaService;
 	
+	@GetMapping
+	public List<Missa> listar(){		
+		return missaRepository.findAll();		
+	}
+	
+	
+	@GetMapping("/{diaSemana}")
 	public ResponseEntity<Missa> buscarPeloDia(@PathVariable String dia){
 		Optional<Missa> missa = missaRepository.findById(dia);
 		if(missa.isPresent()) {
@@ -41,11 +48,6 @@ public class MissaResource {
 		return ResponseEntity.notFound().build();
 	}
 	
-	@GetMapping
-	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_MISSA') and #oauth2.hasScope('read')")
-	public List<Missa> listar(){		
-		return missaRepository.findAll();		
-	}
 	
 	@PostMapping 
 	@ResponseStatus(HttpStatus.CREATED)
@@ -54,16 +56,7 @@ public class MissaResource {
 		return missaRepository.save(missa);
 	}
 	
-	@GetMapping("/{diaSemana}")
-	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_MISSA') and #oauth2.hasScope('read')")
-	public ResponseEntity<Missa> buscarPeloCpf(@PathVariable String diaSemana){
-		Optional<Missa> missa = missaRepository.findById(diaSemana);
-		if(missa.isPresent()) {
-			return ResponseEntity.ok(missa.get());
-		}
-		return ResponseEntity.notFound().build();
-	}
-	
+		
 	@DeleteMapping("/{diaSemana}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void remover(@PathVariable String diaSemana) {

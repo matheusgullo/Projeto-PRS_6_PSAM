@@ -10,5 +10,6 @@ CREATE TABLE paroquia (
 	cep varchar(30)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO paroquia (sobre, telefone,email,logradouro, numero,bairro,cidade, cep) values ('Paróquia Santa Angela de Merici', '(16) 98121-5731','paroq.santangela@gmail.com','Rua Manoel Rodrigues Jacob', '526', 'Santa Angelina', 'Araraquara - SP', '14802-195';
+INSERT INTO paroquia (sobre, telefone,email,logradouro, numero,bairro,cidade, cep) 
+values ('Paróquia Santa Angela de Merici', '(16) 98121-5731','paroq.santangela@gmail.com','Rua Manoel Rodrigues Jacob', '526', 'Santa Angelina', 'Araraquara - SP', '14802-195');
 
