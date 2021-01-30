@@ -34,9 +34,16 @@ public class ParoquiaResource {
 		
 	@Autowired
 	private ParoquiaService paroquiaService;
+	
+	
+	@GetMapping
+	public List<Paroquia> listarParoquia(){		
+		return paroquiaRepository.findAll();
+	}
+	
 		
 	@GetMapping("/{codigo}")
-	public ResponseEntity<Paroquia> buscarPeloCodigo(@PathVariable Long codigo){
+	public ResponseEntity<Paroquia> buscarParoquiaPeloCodigo(@PathVariable Long codigo){
 		Optional<Paroquia> paroquia = paroquiaRepository.findById(codigo);
 		if(paroquia.isPresent()) {
 			return ResponseEntity.ok(paroquia.get());
@@ -44,28 +51,22 @@ public class ParoquiaResource {
 		return ResponseEntity.notFound().build();
 	}
 		
-	@GetMapping
-	//@PreAuthorize("hasAuthority('ROLE_PESQUISAR_PAROQUIA') and #oauth2.hasScope('read')")
-	public List<Paroquia> listar(){		
-		return paroquiaRepository.findAll();		
-	}
-		
 	@PostMapping 
 	@ResponseStatus(HttpStatus.CREATED)
 	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_PAROQUIA') and #oauth2.hasScope('write')")
-	public Paroquia salvar(@Valid @RequestBody Paroquia paroquia ) {
+	public Paroquia salvarParoquia(@Valid @RequestBody Paroquia paroquia ) {
 		return paroquiaRepository.save(paroquia);
 	}
 			
 	@DeleteMapping("/{codigo}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void remover(@PathVariable Long codigo) {
+	public void removerParoquia(@PathVariable Long codigo) {
 		paroquiaRepository.deleteById(codigo);
 	}
 		
 	@PutMapping("/{diaSemana}")
-	public ResponseEntity<Paroquia> atualizar(@PathVariable Long codigo, @RequestBody @Valid Paroquia paroquia){
-		Paroquia paroquiaSalvo = paroquiaService.atualizar(codigo, paroquia);
+	public ResponseEntity<Paroquia> atualizarParoquia(@PathVariable Long codigo, @RequestBody @Valid Paroquia paroquia){
+		Paroquia paroquiaSalvo = paroquiaService.atualizarParoquia(codigo, paroquia);
 		return ResponseEntity.ok(paroquiaSalvo);
 	}
 }

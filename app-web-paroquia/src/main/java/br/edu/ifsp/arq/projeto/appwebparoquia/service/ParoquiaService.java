@@ -14,13 +14,13 @@ public class ParoquiaService {
 	@Autowired
 	private ParoquiaRepository paroquiaRepository;
 	
-	public Paroquia atualizar(Long codigo, Paroquia paroquia) {
-		Paroquia paroquiaSalvo = buscarPessoaPeloCodigo(codigo);
+	public Paroquia atualizarParoquia(Long codigo, Paroquia paroquia) {
+		Paroquia paroquiaSalvo = buscarParoquiaPeloCodigo(codigo);
 		BeanUtils.copyProperties(paroquia, paroquiaSalvo, "codigo");
 		return this.paroquiaRepository.save(paroquiaSalvo);
 	}
 
-	private Paroquia buscarPessoaPeloCodigo(Long codigo) {
+	private Paroquia buscarParoquiaPeloCodigo(Long codigo) {
 		Paroquia paroquiaSalvo = this.paroquiaRepository.findById(codigo)
 				.orElseThrow(()-> new EmptyResultDataAccessException(1));
 		return paroquiaSalvo;

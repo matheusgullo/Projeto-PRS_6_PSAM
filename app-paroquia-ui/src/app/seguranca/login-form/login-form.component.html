@@ -1,0 +1,33 @@
+<div class="container-form bg-info text-white">
+
+    {{ msg }}
+  
+    <form autocomplete="off" #f="ngForm">
+      <div class="p-grid p-fluid">
+  
+        <div class="p-col-12">
+          <h1>Login</h1>
+        </div>
+  
+        <div class="p-col-12">
+          <input pInputText type="email" name="usuario" placeholder="E-mail"
+            ngModel required #usuario>
+        </div>
+  
+        <div class="p-col-12">
+          <input pInputText type="password" name="senha" placeholder="Senha"
+            ngModel required #senha>
+        </div>
+  
+        <div class="p-col-12">
+          <button pButton type="submit" label="Login" [disabled]="!f.valid"
+            (click)="login(usuario.value, senha.value)"></button>
+        </div>
+  
+      </div>
+    </form>
+  
+  </div>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  

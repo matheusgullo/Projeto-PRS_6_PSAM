@@ -1,12 +1,13 @@
 CREATE TABLE missa (
-	dia VARCHAR(10) PRIMARY KEY,
+	id INT(2) PRIMARY KEY,
+	dia VARCHAR(20) NOT NULL,
 	horarios VARCHAR(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO missa (dia, horarios) values ('DOMINGO', '8h, 10h, 19h');
-INSERT INTO missa (dia, horarios) values ('SEGUNDA', '19h30');
-INSERT INTO missa (dia, horarios) values ('TERCA', '19h30');
-INSERT INTO missa (dia, horarios) values ('QUARTA', '19h30');
-INSERT INTO missa (dia, horarios) values ('QUINTA', '19h30');
-INSERT INTO missa (dia, horarios) values ('SEXTA', '19h30');
-INSERT INTO missa (dia, horarios) values ('SABADO', '17:30h');
+INSERT INTO missa (id, dia, horarios) values ('1', 'Domingo', '8h, 10h, 19h');
+INSERT INTO missa (id, dia, horarios) values ('2', 'Segunda-feira', '19h30');
+INSERT INTO missa (id, dia, horarios) values ('3', 'Terça-Feira', '19h30');
+INSERT INTO missa (id, dia, horarios) values ('4', 'Quarta-feira', '19h30');
+INSERT INTO missa (id, dia, horarios) values ('5', 'Quinta-feira', '19h30');
+INSERT INTO missa (id, dia, horarios) values ('6', 'Sexta-feira', '19h30');
+INSERT INTO missa (id, dia, horarios) values ('7', 'Sábado', '17h30');

@@ -1,0 +1,274 @@
+<!-- Início da barra de navegação -->
+<header class="cabecalho fixed-top">
+    <nav class="navbar navbar-expand-sm bg-info navbar-dark">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand logotipo">
+          <img src="/assets/img/logo paroquia.png" alt="Logotipo Paróquia">
+        </a>
+        <!--Recolher barra de navegação em telas pequenas-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#"><span class="txt-container">Início</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#sobre">Sobre nós</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#horarios">Horários de Missa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#oracao">Pedido de oração</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#avaliacao">Avaliar página</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="https://padrepauloricardo.org/programas/homilia-diaria" target="_blank">Homilia diária</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="https://www.a12.com/biblia" target="_blank">Bíblia on-line</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#links">Links úteis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#contato">Contato</a>
+            </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+    </header>
+    <!-- Fim da barra de navegação -->
+    
+    <section class="corpo">
+    <div id="fundo-externo">
+      <div id="fundo">
+        <img src="/assets/img/AngelaMerici-27Enero.jpg" alt="Santa Angela de Merici" class="img-fluid img-fundo">
+      </div>
+    </div>
+    
+    <br/>
+    
+    <div class="container-form bg-secondary text-white" >
+      <a name="sobre">
+        <h2 style="text-align:center">Sobre nós</h2>
+      </a>
+      <br />
+        <img src="/assets/img/7.jpg" alt="Santa Angela de Merici" class="img-fluid rounded-circle img-sobre mx-auto d-block">
+       <p-table [value]="infoParoquia">
+          <ng-template pTemplate="body" let-paroquia>
+            <tr style="background-color: #6c757d; color: white; font-size: 1.2em;" >
+              <td style="text-align:center">{{paroquia.sobre}}</td>
+            </tr>
+          </ng-template>
+        </p-table>   
+    </div>
+    
+    <br/>
+    
+    <div class="container-form bg-info text-white" >
+      <a name="horarios">
+        <h2 style="text-align:center">Horários de Missa</h2>
+      </a>
+      <p-table [value]="listaMissa">
+        <ng-template pTemplate="body" let-missa>
+          <tr style="background-color:  #17a2b8; color: white; font-size: 1.2em;" >
+            <td>{{missa.diaSemana}}: {{missa.horarios}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <br />
+      <p style="text-align: center; font-size: 1.3em;">Todas presenciais</p>
+    </div>  
+    
+    <br/>
+      
+    <div class="container-form bg-secondary text-white" >
+      <a name="oracao">
+        <h2 style="text-align:center">Pedido de oração</h2>
+      </a>			
+      <form action="php/pedido.php" method="post">						
+        <label for="cnome">
+          Nome:
+        </label>
+        <input type="text" name="nome" id="cnome" required/>
+        
+        <label for="cemail">
+            Email:
+        </label>
+        <input type="email" name="email" id="cemail"  required/>							
+        
+        <label for="ctelefone">
+          Telefone:
+        </label>
+        <input type="tel" name="telefone" id="ctelefone" required/>
+        
+        <label for="ctexto">
+          Pedido de oração:
+        </label>
+        <input type="text" name="texto" id="ctexto" required/>
+      
+        <input type="submit" name="botao" value="Enviar" class="botao" />							
+      </form>			
+    </div>
+    
+    <br/>	
+    
+    <div class="container-form bg-info text-white ">
+      <a name="links">
+        <h2 style="text-align:center">Links úteis</h2>
+      </a>
+    
+      <a href="https://liturgia.cancaonova.com/pb/" target="_blank" >
+        <img src="/assets/img/Liturgia_diaria1.jpg" alt="liturgia" class="img-fluid img-links-d img-thumbnail mx-auto d-block" >
+      </a>
+    
+      <a href="http://www.catolicoorante.com.br/oracoes.html" target="_blank" >
+        <img src="/assets/img/oracao dia.jpg" alt="orações" class="img-fluid img-links-e img-thumbnail mx-auto d-block" >
+      </a>		
+    
+      <a href="https://santo.cancaonova.com/" target="_blank" >
+        <img src="/assets/img/santo-do-dia.png" alt="santo do dia" class="img-fluid img-links-d img-thumbnail mx-auto d-block" >
+      </a>
+      
+      <a href="http://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html" target="_blank" >
+        <img src="/assets/img/catecismo_da_igreja_caolica_10.jpg" alt="catecismo" class="img-fluid img-links-e img-thumbnail mx-auto d-block" >
+      </a>			
+      
+    </div>
+    
+    <br/>
+    
+    <div class="localizacao container-form bg-secondary text-white">
+      <h2 style="text-align:center">Localização</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3705.0558445076135!2d-48.18600518546156!3d-21.778099585597275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b8f1661c76e545%3A0x21d0f3f1ec58eaf8!2sIgreja%20Santa%20Angela!5e0!3m2!1spt-BR!2sbr!4v1607956589290!5m2!1spt-BR!2sbr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    
+    <br/>
+    
+    <div class="container-form bg-info text-white">
+      <a name="contato">
+        <h2 style="text-align:center" >Contato</h2>
+      </a>			
+      
+      <div>
+        <p-table [value]="infoParoquia">
+          <ng-template pTemplate="body" let-paroquia>
+            <tr style="background-color: #17a2b8; color: white; font-size: 1.2em;" >
+              <td style="text-align:center">{{paroquia.endereco.logradouro}}, {{paroquia.endereco.numero}}, {{paroquia.endereco.bairro}}</td>
+            </tr>
+            <tr style="background-color: #17a2b8; color: white; font-size: 1.2em;" >
+              <td style="text-align:center">{{paroquia.endereco.cidade}} - CEP: {{paroquia.endereco.cep}}</td>
+            </tr>
+            <tr style="background-color: #17a2b8; color: white; font-size: 1.2em;" >
+              <td style="text-align:center">{{paroquia.telefone}}</td>
+            </tr>
+            <tr style="background-color: #17a2b8; color: white; font-size: 1.2em;" >
+              <td style="text-align:center">{{paroquia.email}}</td>
+            </tr>
+          </ng-template>
+        </p-table>   
+        <br />
+        <div style="text-align: center;">       
+          <a href="https://www.facebook.com/paroquiasantaangela" target="_blank">
+            <img src="/assets/img/facebook.png" alt="facebook" class="img-thumbnail img-icones" >
+          </a>
+          <a href="https://www.youtube.com/channel/UCGQxsrPz6WhJg5eF6bbFBBw" target="_blank" >
+            <img src="/assets/img/youtube.png" alt="youtube" class="img-thumbnail img-icones" >
+          </a>
+        </div>				
+      </div>		
+    </div>	
+    
+    <br/>
+    
+    <div class="container-form bg-secondary text-white" >
+      <a name="avaliacao">
+        <h2 style="text-align:center">Avaliação do site</h2>
+      </a>			
+      <form action="php/avaliacao.php" method="post">						
+        <label for="cnome">
+          Nome:
+        </label>
+        <input type="text" name="nome" id="cnome" required/>
+      <fieldset >
+          <legend>Nota</legend>	
+       <!-- <p-rating class="avaliacao" [(ngModel)]="val" [cancel]="false" stars="10" size="large" required="true"></p-rating>	-->
+     <!--  <star-rating value="5" totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating> -->
+          <label for="0"><input type="radio" id="0" name="nota" value="0">0</label> 
+          
+          <label for="1"><input type="radio" id="1" name="nota" value="1">1</label>
+          
+          <label for="2"><input type="radio" id="2" name="nota" value="2">2</label> 
+          
+          <label for="3"><input type="radio" id="3" name="nota" value="3">3</label>
+          
+          <label for="4"><input type="radio" id="4" name="nota" value="4">4</label>
+          
+          <label for="5"><input type="radio" id="5" name="nota" value="5">5</label>
+          
+          <label for="6"><input type="radio" id="6" name="nota" value="6">6</label>
+          
+          <label for="7"><input type="radio" id="7" name="nota" value="7">7</label>
+          
+          <label for="8"><input type="radio" id="8" name="nota" value="8">8</label>
+          
+          <label for="9"><input type="radio" id="9" name="nota" value="9">9</label>
+          
+          <label for="10"><input type="radio" id="10" name="nota" value="10">10</label>
+      </fieldset>
+        <br />
+        <label for="csugestao">
+          Sugestões:
+        </label>
+        <input type="text" name="sugestao" id="csugestao" required/>
+      
+        <input type="submit" name="botao" value="Enviar" class="botao" />							
+      </form>			
+    </div>
+    
+    </section>			
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/webcomponents-bundle.min.js"></script>
+    
+    <script type="text/javascript">
+    /*$(document).on("scroll", function(){
+      if($(document).scrollTop() > 50){
+        $('.cabecalho').addClass('sticky');
+        $('.logotipo img').addClass('sticky img');
+      }else{
+        $('.cabecalho').removeClass('sticky');
+        $('.logotipo img').removeClass('sticky img');
+      }
+    
+    });*/
+    
+    document$(window).scroll(function() {
+    if ($(document).scrollTop() > 50) {
+        $('.navbar').addClass('sticky');
+        $('.logotipo img').addClass('sticky img');
+    } else {
+      $('.navbar').removeClass('sticky');
+      $('.logotipo img').removeClass('sticky img');
+    }
+    });
+    </script>		
+    
+    

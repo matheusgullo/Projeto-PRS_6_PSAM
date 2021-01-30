@@ -13,14 +13,14 @@ public class MissaService {
 	@Autowired
 	private MissaRepository missaRepository;
 	
-	public Missa atualizar(String diaSemana, Missa missa) {
-		Missa missaSalvo = buscarMissaDia(diaSemana);
-		BeanUtils.copyProperties(missa, missaSalvo, "diaSemana");
+	public Missa atualizarMissa(Integer id, Missa missa) {
+		Missa missaSalvo = buscarMissaId(id);
+		BeanUtils.copyProperties(missa, missaSalvo, "id");
 		return this.missaRepository.save(missaSalvo);
 	}
 		
-	private Missa buscarMissaDia(String diaSemana) {
-		Missa missaSalvo = this.missaRepository.findById(diaSemana).orElseThrow(()-> new EmptyResultDataAccessException(1));
+	private Missa buscarMissaId(Integer id) {
+		Missa missaSalvo = this.missaRepository.findById(id).orElseThrow(()-> new EmptyResultDataAccessException(1));
 		return missaSalvo;
 	}
 }

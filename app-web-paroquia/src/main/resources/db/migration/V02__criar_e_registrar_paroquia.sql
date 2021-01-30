@@ -10,6 +10,5 @@ CREATE TABLE paroquia (
 	cep varchar(30)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO paroquia (sobre, telefone,email,logradouro, numero,bairro,cidade, cep) 
-values ('Paróquia Santa Angela de Merici', '(16) 98121-5731','paroq.santangela@gmail.com','Rua Manoel Rodrigues Jacob', '526', 'Santa Angelina', 'Araraquara - SP', '14802-195');
+INSERT INTO paroquia (sobre, telefone, email, logradouro, numero, bairro, cidade, cep) values ('Como disse nossa Padroeira: "Agi, mexei-vos, crede, esforçai-vos, esperai, clamai a Deus do fundo do coração, porque sem dúvida alguma vereis maravilhas". Seja bem-vindo(a) ao nosso site paroquial de Santa Ângela de Mérici!', '(16) 98121-5731','paroq.santangela@gmail.com','Rua Manoel Rodrigues Jacob', '526', 'Santa Angelina', 'Araraquara - SP', '14802-195');
 
