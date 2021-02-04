@@ -8,8 +8,8 @@ export class Endereco{
 
 export class Missa {
     id: number;
-    diaSemana: [];
-    horarios: [];
+    diaSemana: string;
+    horarios: string;
 
     static toJsonMissa(missa: Missa): any {
         return {

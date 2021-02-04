@@ -1,4 +1,5 @@
 <div class="container">
+  
     <form #f="ngForm" (ngSubmit)="alterar(f)">
   
       <div class="p-grid">
@@ -13,7 +14,7 @@
                 <td class="titulo">{{missa.diaSemana}}:</td>
                 <td>
                   <input pInputText type="text" required
-                  name="horarios" [(ngModel)]="missa.diaSemana" #horarios="ngModel">
+                  name="{{missa.horarios}}"  [(ngModel)]="missa.horarios">
                 </td>
               </tr>
             </ng-template>

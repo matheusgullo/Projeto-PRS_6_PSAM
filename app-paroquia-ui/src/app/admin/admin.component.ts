@@ -11,7 +11,7 @@ import { Paroquia } from 'src/app/core/model';
 })
 export class AdminComponent implements OnInit {
 
-  listaMissa = [];
+  listaMissa = []; 
 
   paroquia = [];
 

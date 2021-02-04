@@ -24,8 +24,6 @@ import { InputTextareaModule} from 'primeng/inputtextarea';
     SelectButtonModule,
     DropdownModule,
     InputTextareaModule
-  ], exports: [
-    AdminComponent
   ]
 })
 export class AdminModule { } 
