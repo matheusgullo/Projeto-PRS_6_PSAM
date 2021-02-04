@@ -1,5 +1,5 @@
 <!-- Início da barra de navegação -->
-<header class="cabecalho fixed-top">
+<header class="cabecalho">
     <nav class="navbar navbar-expand-sm bg-info navbar-dark">
       <div class="container-fluid">
         <a href="index.html" class="navbar-brand logotipo">
@@ -37,6 +37,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link page-scroll" href="#contato">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="/login">Admin</a>
             </li>
             </ul>
           </div>
@@ -76,9 +79,9 @@
         <h2 style="text-align:center">Horários de Missa</h2>
       </a>
       <p-table [value]="listaMissa">
-        <ng-template pTemplate="body" let-missa>
+        <ng-template pTemplate="body" let-missa> 
           <tr style="background-color:  #17a2b8; color: white; font-size: 1.2em;" >
-            <td>{{missa.diaSemana}}: {{missa.horarios}}</td>
+            <td style="text-align: center;">{{missa.diaSemana}}: {{missa.horarios}}</td>
           </tr>
         </ng-template>
       </p-table>
@@ -248,27 +251,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/webcomponents-bundle.min.js"></script>
     
-    <script type="text/javascript">
-    /*$(document).on("scroll", function(){
-      if($(document).scrollTop() > 50){
-        $('.cabecalho').addClass('sticky');
-        $('.logotipo img').addClass('sticky img');
-      }else{
-        $('.cabecalho').removeClass('sticky');
-        $('.logotipo img').removeClass('sticky img');
-      }
-    
-    });*/
-    
-    document$(window).scroll(function() {
-    if ($(document).scrollTop() > 50) {
-        $('.navbar').addClass('sticky');
-        $('.logotipo img').addClass('sticky img');
-    } else {
-      $('.navbar').removeClass('sticky');
-      $('.logotipo img').removeClass('sticky img');
-    }
-    });
-    </script>		
     
     

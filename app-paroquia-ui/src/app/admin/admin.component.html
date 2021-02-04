@@ -1,0 +1,97 @@
+<div class="container">
+    <form #f="ngForm" (ngSubmit)="alterar(f)">
+  
+      <div class="p-grid">
+        <div class="p-col-12" >
+          <h1>Horários de missa</h1>
+        </div>
+      
+        <div class="p-col-12 p-md-9 p-fluid" >
+          <p-table [value]="listaMissa">
+            <ng-template pTemplate="body" let-missa> 
+              <tr>
+                <td class="titulo">{{missa.diaSemana}}:</td>
+                <td>
+                  <input pInputText type="text" required
+                  name="horarios" [(ngModel)]="missa.diaSemana" #horarios="ngModel">
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      
+          <div class="p-col-12">
+            <h1>Informações da paróquia</h1>
+          </div>
+
+          <div class="p-col-12 p-md-9 p-fluid">
+            <p-table [value]="paroquia">
+              <ng-template pTemplate="body" let-p> 
+                <tr>
+                  <td class="titulo">Sobre:</td>
+                  <td>
+                    <textarea pInputTextarea rows="5" name="sobre"
+                      [(ngModel)]="p.sobre" #sobre="ngModel"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="titulo">Telefone:</td>
+                  <td>
+                  <input pInputText type="text" name="telefone" 
+                    [(ngModel)]="p.telefone" #telefone="ngModel" required>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="titulo">E-mail:</td>
+                  <td>
+                  <input pInputText type="text" name="email" 
+                    [(ngModel)]="p.email" #email="ngModel" required>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="titulo">Logradouro:</td>
+                  <td>
+                  <input pInputText type="text" name="logradouro" 
+                    [(ngModel)]="p.endereco.logradouro" #logradouro="ngModel" required>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="titulo">Número:</td>
+                  <td>
+                  <input pInputText type="text" name="numero" 
+                    [(ngModel)]="p.endereco.numero" #numero="ngModel" required>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="titulo">Bairro:</td>
+                  <td>
+                  <input pInputText type="text" name="bairro" 
+                    [(ngModel)]="p.endereco.bairro" #bairro="ngModel" required>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="titulo">Cidade:</td>
+                  <td>
+                  <input pInputText type="text" name="cidade" 
+                    [(ngModel)]="p.endereco.cidade" #cidade="ngModel" required>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="titulo">CEP:</td>
+                  <td>
+                  <input pInputText type="text" name="cep" 
+                    [(ngModel)]="p.endereco.cep" #cep="ngModel" required>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        
+          <div class="p-col-12 p-fluid" style="text-align: center;">
+            <button pButton type="submit" label="Salvar"></button>
+          </div>
+      </div>
+  
+  </form>
+</div>   
+  

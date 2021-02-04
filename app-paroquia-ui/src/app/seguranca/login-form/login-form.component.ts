@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 
@@ -11,7 +12,7 @@ export class LoginFormComponent implements OnInit {
 
   msg: any;
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -19,7 +20,7 @@ export class LoginFormComponent implements OnInit {
   login(usuario: string, senha: string): void {
     this.auth.login(usuario, senha)
       .then(() => {
-        this.msg = 'redirecionar para /atualizacoes';
+        this.router.navigate(['/admin']); 
       })
       .catch(() => {
         this.msg = 'Usuário ou senha inválida!';

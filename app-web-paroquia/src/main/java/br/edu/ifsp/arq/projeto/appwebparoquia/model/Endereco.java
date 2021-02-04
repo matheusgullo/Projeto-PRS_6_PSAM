@@ -1,5 +1,8 @@
 package br.edu.ifsp.arq.projeto.appwebparoquia.model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Endereco {
 	
 	private String logradouro;
