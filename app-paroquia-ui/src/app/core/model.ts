@@ -1,11 +1,3 @@
-export class Endereco{
-    logradouro: string;
-    numero: string;
-    bairro: string;
-    cidade: string;
-    cep: string;
-}
-
 export class Missa {
     id: number;
     diaSemana: string;
@@ -18,6 +10,14 @@ export class Missa {
           horarios: missa.horarios
         };
     }
+}
+
+export class Endereco{
+    logradouro: string;
+    numero: string;
+    bairro: string;
+    cidade: string;
+    cep: string;
 }
   
 export class Paroquia {

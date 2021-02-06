@@ -14,6 +14,7 @@ public class Missa {
 	private int id;
 	
 	@Column(name="dia")
+	@NotNull
 	private String diaSemana;
 	
 	@NotNull

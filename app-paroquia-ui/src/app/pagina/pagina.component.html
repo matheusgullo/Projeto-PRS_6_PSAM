@@ -12,19 +12,16 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="#"><span class="txt-container">Início</span></a>
+              <a class="nav-link page-scroll" href="/home/#sobre">Sobre nós</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="#sobre">Sobre nós</a>
+              <a class="nav-link page-scroll" href="/home/#horarios">Horários de Missa</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="#horarios">Horários de Missa</a>
+              <a class="nav-link page-scroll" href="/home/#oracao">Pedido de oração</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="#oracao">Pedido de oração</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link page-scroll" href="#avaliacao">Avaliar página</a>
+              <a class="nav-link page-scroll" href="/home/#avaliacao">Avaliar página</a>
             </li>
             <li class="nav-item">
               <a class="nav-link page-scroll" href="https://padrepauloricardo.org/programas/homilia-diaria" target="_blank">Homilia diária</a>
@@ -33,10 +30,10 @@
               <a class="nav-link page-scroll" href="https://www.a12.com/biblia" target="_blank">Bíblia on-line</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="#links">Links úteis</a>
+              <a class="nav-link page-scroll" href="/home/#links">Links úteis</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="#contato">Contato</a>
+              <a class="nav-link page-scroll" href="/home/#contato">Contato</a>
             </li>
             <li class="nav-item">
               <a class="nav-link page-scroll" href="/login">Admin</a>
@@ -95,7 +92,8 @@
       <a name="oracao">
         <h2 style="text-align:center">Pedido de oração</h2>
       </a>			
-      <form action="php/pedido.php" method="post">						
+      <form action="https://mailthis.to/potyfoliva@gmail.com" method="POST" encType="multipart/form-data">
+        <input type="hidden" name="_subject" value="Pedido oracao">						
         <label for="cnome">
           Nome:
         </label>
@@ -116,7 +114,7 @@
         </label>
         <input type="text" name="texto" id="ctexto" required/>
       
-        <input type="submit" name="botao" value="Enviar" class="botao" />							
+        <input type="submit" name="botao" value="Enviar oração" class="botao" />							
       </form>			
     </div>
     
@@ -194,15 +192,15 @@
       <a name="avaliacao">
         <h2 style="text-align:center">Avaliação do site</h2>
       </a>			
-      <form action="php/avaliacao.php" method="post">						
+      <form action="https://mailthis.to/potyfoliva@gmail.com" method="POST" encType="multipart/form-data">
+        <input type="hidden" name="_subject" value="Avaliacao do site">						
         <label for="cnome">
           Nome:
         </label>
         <input type="text" name="nome" id="cnome" required/>
       <fieldset >
           <legend>Nota</legend>	
-       <!-- <p-rating class="avaliacao" [(ngModel)]="val" [cancel]="false" stars="10" size="large" required="true"></p-rating>	-->
-     <!--  <star-rating value="5" totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating> -->
+       
           <label for="0"><input type="radio" id="0" name="nota" value="0">0</label> 
           
           <label for="1"><input type="radio" id="1" name="nota" value="1">1</label>
@@ -231,7 +229,7 @@
         </label>
         <input type="text" name="sugestao" id="csugestao" required/>
       
-        <input type="submit" name="botao" value="Enviar" class="botao" />							
+        <input type="submit" name="botao" value="Enviar avaliação" class="botao" />							
       </form>			
     </div>
     

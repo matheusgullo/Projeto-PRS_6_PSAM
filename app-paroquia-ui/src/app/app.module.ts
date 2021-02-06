@@ -41,7 +41,7 @@ const rotas: Routes = [
     AdminModule,
     InputTextareaModule
   ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

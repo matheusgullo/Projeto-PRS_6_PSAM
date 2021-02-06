@@ -64,7 +64,8 @@ public class ParoquiaResource {
 		paroquiaRepository.deleteById(codigo);
 	}
 		
-	@PutMapping("/{diaSemana}")
+	@PutMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_PAROQUIA') and #oauth2.hasScope('write')")
 	public ResponseEntity<Paroquia> atualizarParoquia(@PathVariable Long codigo, @RequestBody @Valid Paroquia paroquia){
 		Paroquia paroquiaSalvo = paroquiaService.atualizarParoquia(codigo, paroquia);
 		return ResponseEntity.ok(paroquiaSalvo);

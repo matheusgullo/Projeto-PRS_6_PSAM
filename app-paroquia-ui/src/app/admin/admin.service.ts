@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Missa } from '../core/model';
+import { Missa, Paroquia } from '../core/model';
 
 
 @Injectable({
@@ -30,7 +30,40 @@ export class AdminService {
       });
   }
 
-  /*alterarMissa(missa: Missa): Promise<Missa>{
+  atualizarParoquia(paroquia: Paroquia): Promise<Paroquia> {
+    const headers = new HttpHeaders()
+      .append('Content-Type', 'application/json');
 
-  }*/
+    return this.http.put<Paroquia>(`${this.paroquiaUrl}/${paroquia.codigo}`, 
+    Paroquia.toJsonParoquia(paroquia), { headers })
+      .toPromise()
+      .then(response => {
+        const paroquiaAlterada = response;
+        return paroquiaAlterada;
+      });
+  }
+
+  buscarParoquiaPorCodigo(): Promise<Paroquia> {
+    return this.http.get<Paroquia>(`${this.paroquiaUrl}/1`)
+      .toPromise()
+      .then(response => {
+        const paroquia = response;
+        return paroquia;
+      });
+  }
+
+  atualizarMissa(missa: Missa): Promise<Missa> {
+    const headers = new HttpHeaders()
+      .append('Content-Type', 'application/json');
+
+    return this.http.put<Missa>(`${this.missasUrl}/${missa.id}`, 
+    Missa.toJsonMissa(missa), { headers })
+      .toPromise()
+      .then(response => {
+        const missaAlterada = response;
+        return missaAlterada;
+      });
+  }
+
+
 }

@@ -67,9 +67,11 @@ public class MissaResource {
 	}
 	
 	@PutMapping("/{id}")
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_MISSA') and #oauth2.hasScope('write')")
 	public ResponseEntity<Missa> atualizarMissa(@PathVariable Integer id, @RequestBody @Valid Missa missa){
 		Missa missaSalvo = missaService.atualizarMissa(id, missa);
 		return ResponseEntity.ok(missaSalvo);
 	}
+	
 	
 }

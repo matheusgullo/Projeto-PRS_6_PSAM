@@ -1,5 +1,7 @@
 package br.edu.ifsp.arq.projeto.appwebparoquia.service;
 
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -23,4 +25,5 @@ public class MissaService {
 		Missa missaSalvo = this.missaRepository.findById(id).orElseThrow(()-> new EmptyResultDataAccessException(1));
 		return missaSalvo;
 	}
+	
 }

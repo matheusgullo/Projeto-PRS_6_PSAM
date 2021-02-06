@@ -10,6 +10,9 @@ import { TooltipModule } from 'primeng/tooltip';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextareaModule} from 'primeng/inputtextarea';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [AdminComponent],
@@ -23,7 +26,10 @@ import { InputTextareaModule} from 'primeng/inputtextarea';
     TooltipModule,
     SelectButtonModule,
     DropdownModule,
-    InputTextareaModule
-  ]
+    InputTextareaModule,
+    RouterModule,
+    BrowserAnimationsModule
+  ],
+  exports: [AdminComponent]
 })
 export class AdminModule { } 
